@@ -23,7 +23,7 @@ export class DetallePeliculasPage implements OnInit {
   }
 
   openWebsite(){
-    window.open(this.informacion.Website, '_blank');
+    window.open(this.informacion.Website,'_system', 'location=yes');
   }
 
 }

@@ -14,7 +14,7 @@
       <ion-select-option value="series">Series</ion-select-option>
       <ion-select-option value="episode">Episodios</ion-select-option>
     </ion-select>
-  </ion-item>
+  </ion-item> 
 
   <ion-list>
     <ion-item button *ngFor="let elemento of (results| async)" [routerLink]="['/', 'peliculas', elemento.imdbID]">
