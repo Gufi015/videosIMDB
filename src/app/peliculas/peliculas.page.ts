@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { PeliculasService, TipoBusqueda } from "../servicios/peliculas.service";
 
 @Component({
   selector: 'app-peliculas',
@@ -7,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PeliculasPage implements OnInit {
 
-  constructor() { }
+  results:Observable<any>;
+  buscar:string = '';
+
+  type: TipoBusqueda = TipoBusqueda.All;
+
+  constructor(private peliculas:PeliculasService) { }
 
   ngOnInit() {
+  }
+
+
+  busquedaPeliculas(){
+    this.results = this.peliculas.consultarPeliculas(this.buscar, this.type);
   }
 
 }

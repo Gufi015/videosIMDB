@@ -1,9 +1,19 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>peliculas</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
+<ion-content ion-padding>
+  <ion-searchbar [(ngModel)]="buscar" (ionChange)=" busquedaPeliculas($event)"></ion-searchbar>
+  <ion-item>
+    <ion-label>Busqueda Filtrada</ion-label>
+    <ion-select [(ngModel)]="type" (ionChange)="busquedaPeliculas($event)">
+      <ion-select-option value="">All</ion-select-option>
+      <ion-select-option value="Movies">Movies</ion-select-option>
+      <ion-select-option value="Series">Series</ion-select-option>
+      <ion-select-option value="Episodios">Episodios</ion-select-option>
+    </ion-select>
+  </ion-item>
 
 </ion-content>
