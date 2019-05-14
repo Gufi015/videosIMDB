@@ -12,7 +12,7 @@ export class PeliculasPage implements OnInit {
   results:Observable<any>;
   buscar:string = '';
 
-  type: TipoBusqueda = TipoBusqueda.All;
+  type: TipoBusqueda = TipoBusqueda.all;
 
   constructor(private peliculas:PeliculasService) { }
 
